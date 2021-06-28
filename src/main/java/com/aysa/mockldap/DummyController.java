@@ -31,6 +31,10 @@ public class DummyController {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
 
+        if (values[1] == "wrong") {
+            return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+        }
+
         LdapSucursal sucursal = LdapSucursal.builder()
                 .id(1L)
                 .name("Sucursal")
