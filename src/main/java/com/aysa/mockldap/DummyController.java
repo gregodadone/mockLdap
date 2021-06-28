@@ -31,7 +31,7 @@ public class DummyController {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
 
-        if (values[1] == "wrong") {
+        if ("wrong".equals(values[1])) {
             return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
         }
 
