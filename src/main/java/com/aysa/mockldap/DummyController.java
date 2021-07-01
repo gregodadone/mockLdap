@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 import java.util.Base64;
 import java.util.Collections;
 
@@ -35,22 +36,42 @@ public class DummyController {
             return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
         }
 
-        LdapSucursal sucursal = LdapSucursal.builder()
-                .id(1L)
-                .name("Sucursal")
+        LdapSucursal sucursalAvellaneda = LdapSucursal.builder()
+                .id(7L)
+                .name("AVELLANEDA")
                 .build();
 
-        LdapAction action = LdapAction.builder()
+        LdapSucursal sucursalBelgrano = LdapSucursal.builder()
+                .id(30L)
+                .name("BELGRANO")
+                .build();
+
+        LdapAction actionDeshabiltarCAU = LdapAction.builder()
                 .id(1L)
                 .habilitado(true)
-                .name("accion")
-                .sucursales(Collections.singletonList(sucursal))
+                .name("deshabiltarCAU")
+                .sucursales(Collections.singletonList(sucursalAvellaneda))
+                .build();
+
+        LdapAction actionCancelarTurno = LdapAction.builder()
+                .id(2L)
+                .habilitado(true)
+                .name("cancelarTurno")
+                .sucursales(Collections.singletonList(sucursalAvellaneda))
+                .build();
+
+
+        LdapAction actionActualizarPuestos = LdapAction.builder()
+                .id(3L)
+                .habilitado(true)
+                .name("actualizarPuestos")
+                .sucursales(Collections.singletonList(sucursalBelgrano))
                 .build();
 
         LdapUser user = LdapUser.builder()
                 .id(1L)
                 .username(values[0])
-                .actions(Collections.singletonList(action))
+                .actions(Arrays.asList(actionDeshabiltarCAU, actionActualizarPuestos, actionCancelarTurno))
                 .build();
 
         return new ResponseEntity<>(user, HttpStatus.OK);
