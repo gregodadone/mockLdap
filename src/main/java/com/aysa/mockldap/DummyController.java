@@ -71,7 +71,7 @@ public class DummyController {
         LdapUser user = LdapUser.builder()
                 .id(1L)
                 .username(values[0])
-                .actions(Arrays.asList(actionDeshabiltarCAU, actionActualizarPuestos, actionCancelarTurno))
+                .actions(Arrays.asList(actionDeshabiltarCAU, actionCancelarTurno, actionActualizarPuestos))
                 .build();
 
         return new ResponseEntity<>(user, HttpStatus.OK);
