@@ -10,8 +10,8 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class LdapAction {
-    private long id;
+    //private long id;
     private String name;
-    private boolean habilitado;
+    //private boolean habilitado;
     private List<LdapSucursal> sucursales;
 }

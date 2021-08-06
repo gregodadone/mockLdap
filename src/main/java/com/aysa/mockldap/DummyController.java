@@ -47,23 +47,23 @@ public class DummyController {
                 .build();
 
         LdapAction actionDeshabiltarCAU = LdapAction.builder()
-                .id(1L)
-                .habilitado(true)
+                //.id(1L)
+                //.habilitado(true)
                 .name("deshabiltarCAU")
                 .sucursales(Collections.singletonList(sucursalAvellaneda))
                 .build();
 
         LdapAction actionCancelarTurno = LdapAction.builder()
-                .id(2L)
-                .habilitado(true)
+                //.id(2L)
+                //.habilitado(true)
                 .name("cancelarTurno")
                 .sucursales(Collections.singletonList(sucursalAvellaneda))
                 .build();
 
 
         LdapAction actionActualizarPuestos = LdapAction.builder()
-                .id(3L)
-                .habilitado(true)
+                //.id(3L)
+                //.habilitado(true)
                 .name("actualizarPuestos")
                 .sucursales(Collections.singletonList(sucursalBelgrano))
                 .build();
