@@ -8,9 +8,11 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Base64;
 import java.util.Collections;
+import java.util.List;
 
 @RestController
 public class DummyController {
@@ -60,13 +62,22 @@ public class DummyController {
                 .sucursales(Collections.singletonList(sucursalAvellaneda))
                 .build();
 
+        List listSucursales=new ArrayList();
+        listSucursales.add(sucursalBelgrano);
+        listSucursales.add(sucursalAvellaneda);
 
         LdapAction actionActualizarPuestos = LdapAction.builder()
+                .name("actualizarPuestos")
+                .sucursales(listSucursales)
+                .build();
+
+
+        /*  LdapAction actionActualizarPuestos = LdapAction.builder()
                 //.id(3L)
                 //.habilitado(true)
                 .name("actualizarPuestos")
                 .sucursales(Collections.singletonList(sucursalBelgrano))
-                .build();
+                .build();*/
 
         LdapUser user = LdapUser.builder()
                 .id(1L)
