@@ -55,16 +55,19 @@ public class DummyController {
                 .sucursales(Collections.singletonList(sucursalAvellaneda))
                 .build();
 
+        List listSucursales=new ArrayList();
+        listSucursales.add(sucursalBelgrano);
+        listSucursales.add(sucursalAvellaneda);
+
         LdapAction actionCancelarTurno = LdapAction.builder()
                 //.id(2L)
                 //.habilitado(true)
                 .name("cancelarTurno")
-                .sucursales(Collections.singletonList(sucursalAvellaneda))
+            //    .sucursales(Collections.singletonList(sucursalAvellaneda))
+                .sucursales(listSucursales)
                 .build();
 
-        List listSucursales=new ArrayList();
-        listSucursales.add(sucursalBelgrano);
-        listSucursales.add(sucursalAvellaneda);
+
 
         LdapAction actionActualizarPuestos = LdapAction.builder()
                 .name("actualizarPuestos")
