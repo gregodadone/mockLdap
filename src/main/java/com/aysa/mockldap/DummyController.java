@@ -20,7 +20,7 @@ public class DummyController {
     @PostMapping("/api/v1/ldapLogin")
     public ResponseEntity<LdapUser> dummyEndpoint(
             @RequestHeader(HttpHeaders.AUTHORIZATION) String authorization,
-            @RequestHeader("application-id") String applicationId
+            @RequestHeader("appToken") String applicationId
     ) {
         String[] values;
         if (authorization != null && authorization.toLowerCase().startsWith("basic") && applicationId != null) {
