@@ -51,7 +51,7 @@ public class DummyController {
         LdapAction actionDeshabiltarCAU = LdapAction.builder()
                 //.id(1L)
                 //.habilitado(true)
-                .name("deshabiltarCAU")
+                .name("deshabilitarCAU")
                 .sucursales(Collections.singletonList(sucursalAvellaneda))
                 .build();
 
@@ -74,6 +74,10 @@ public class DummyController {
                 .sucursales(listSucursales)
                 .build();
 
+           LdapAction actionReportes = LdapAction.builder()
+                .name("emitirReportes")
+                .sucursales(listSucursales)
+                .build();
 
         /*  LdapAction actionActualizarPuestos = LdapAction.builder()
                 //.id(3L)
@@ -85,7 +89,7 @@ public class DummyController {
         LdapUser user = LdapUser.builder()
                 .id(1L)
                 .username(values[0])
-                .actions(Arrays.asList(actionDeshabiltarCAU, actionCancelarTurno, actionActualizarPuestos))
+                .actions(Arrays.asList(actionDeshabiltarCAU, actionCancelarTurno, actionActualizarPuestos,actionReportes))
                 .build();
 
         return new ResponseEntity<>(user, HttpStatus.OK);
